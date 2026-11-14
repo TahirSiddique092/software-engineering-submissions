@@ -9,3 +9,4 @@ Each lab is in its own numbered folder.
 | Lab | Topic | Folder |
 |-----|-------|--------|
 | 1 | Requirements Engineering & UML Use-Case Modelling | [lab-1](lab-1/) |
+| 3 | Component Modelling & Architectural Pattern Selection | [lab-3](lab-3/) |
