@@ -12,3 +12,5 @@ Each lab is in its own numbered folder.
 | 3 | Component Modelling & Architectural Pattern Selection | [lab-3](lab-3/) |
 | 4 | Minesweeper (separate forked repository) | [lab-4](lab-4/) |
 | 5 | Static Code Analysis (separate forked repository) | [lab-5](lab-5/) |
+| 6 | Code and Branch Coverage Analysis (separate forked repository) | [lab-6](lab-6/) |
+| 7 | Fuzzing for Input Validation Bugs (separate forked repository) | [lab-7](lab-7/) |
