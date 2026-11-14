@@ -1,0 +1,56 @@
+@startuml use-case-diagram
+left to right direction
+skinparam shadowing false
+skinparam packageStyle rectangle
+skinparam defaultFontName Helvetica
+skinparam actor {
+  BackgroundColor #FFFFFF
+  BorderColor #1F2937
+}
+skinparam usecase {
+  BackgroundColor #EEF4FF
+  BorderColor #1D4ED8
+  ArrowColor #1F2937
+}
+skinparam rectangle {
+  BorderColor #1F2937
+}
+
+title Patient Health Record Consent Management System - Use-Case Diagram
+
+actor "Patient" as P
+actor "Clinic\nAdministrator" as CA
+
+rectangle "Patient Health Record Consent Management System" {
+  usecase "Grant Time-Bound\nConsent" as UC1
+  usecase "Revoke Consent" as UC2
+  usecase "Review Access\nRequest" as UC3
+  usecase "View Consents and\nAccess History" as UC4
+  usecase "Submit Access\nRequest" as UC5
+  usecase "Access Patient\nRecords" as UC6
+  usecase "Register Verified\nDoctor" as UC7
+  usecase "Validate Consent" as UC8
+  usecase "Log Audit Event" as UC9
+  usecase "Deny Access and\nAlert Patient" as UC10
+}
+
+P -- UC3
+P -- UC1
+P -- UC2
+P -- UC4
+
+UC5 -- CA
+UC6 -- CA
+UC7 -- CA
+
+UC9 -[hidden]- UC5
+UC8 -[hidden]- UC7
+
+UC8 <.. UC6 : <<include>>
+UC1 ..> UC9 : <<include>>
+UC2 ..> UC9 : <<include>>
+UC9 <.. UC6 : <<include>>
+
+UC1 .> UC3 : <<extend>>\n[request approved]
+UC10 ..> UC6 : <<extend>>\n[consent missing,\nexpired or revoked]
+@enduml
